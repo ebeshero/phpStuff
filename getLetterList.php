@@ -5,7 +5,7 @@
     <title>Read a document</title>
 </head>
 <body>
-<h1>Here's a document</h1>
+<h1>Choose a document to read from the list below</h1>
 <hr/>
 <ul>
 <?php
