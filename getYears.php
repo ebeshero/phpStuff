@@ -7,10 +7,12 @@
 <body>
 <h1>View the documents from a particular year</h1>
 <hr/>
+<ul>
 <?php
     $contents = REST_PATH . "/db/queries/letterDates.xql";
     $result = file_get_contents($contents);
     echo $result;
 ?>
+</ul>
 </body>
 </html>
