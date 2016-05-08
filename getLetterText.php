@@ -7,7 +7,6 @@
 <body>
 <h1>Select a document to view</h1>
 <hr/>
-<ul>
 <?php
     require_once("config.php");
     $uri = htmlspecialchars($_GET["uri"]);
@@ -15,6 +14,5 @@
     $result = file_get_contents($contents);
     echo $result;
 ?>
-</ul>
 </body>
 </html>
