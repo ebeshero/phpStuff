@@ -11,7 +11,6 @@
 <?php
     require_once("config.php");
     $contents = REST_PATH . "/db/queries/letterDates.xql";
-    echo "<p>" . $contents . "</p>";
     $result = file_get_contents($contents);
     echo $result;
 ?>

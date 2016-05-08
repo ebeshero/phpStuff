@@ -1,22 +1,22 @@
 # phpStuff
-for experiments with PHP on projects
+For experiments with PHP on projects
 
 Three pages to support selecting and reading a letter
 
-## First page
+## First page: getYears.php
 
 _What it does:_ displays a list of years in the corpus
 
 _How it looks:_
 
-	<li>1810</li>
-	<li>1811</li>
+	<li><a href="getLetterList.php?year=1810">1810</a></li>
+	<li><a href="getLetterList.php?year=1811">1811</a></li>
 
 _What the user does:_ Choose a year
 
 _What happen:_ Returns second page, with list of letters from that year
 
-##Second page
+##Second page: getLetterList.php
 
 _What it does:_ Displays brief-form list of letters from the selected year
 
@@ -29,7 +29,7 @@ _What the user does:_ Choose a letter
 
 _What happens:_ Returns third page, with formatted letter
 
-##Third page
+##Third page: getLetterText.php
 
 _What it does:_ Display the chosen letter
 
