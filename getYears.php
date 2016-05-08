@@ -12,6 +12,5 @@
     $result = file_get_contents($contents);
     echo $result;
 ?>
-</table>
 </body>
 </html>
