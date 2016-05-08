@@ -11,7 +11,7 @@
 <?php
     require_once("config.php");
     $uri = htmlspecialchars($_GET["uri"]);
-    $contents = REST_PATH . "/db/queries/letterText.xql?uri=$uri";
+    $contents = REST_PATH . "/db/queries/letterList.xql?year=$year";
     $result = file_get_contents($contents);
     echo $result;
 ?>
