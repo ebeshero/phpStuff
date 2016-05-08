@@ -10,7 +10,7 @@
 <ul>
 <?php
     require_once("config.php");
-    $year = htmlspecialchars($_GET["year"]);
+    $year = htmlspecialchars($_GET["uri"]);
     $contents = REST_PATH . "/db/queries/letterText.xql?uri=$uri";
     $result = file_get_contents($contents);
     echo $result;
