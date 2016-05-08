@@ -2,16 +2,16 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Read a document</title>
+    <title>View the documents from a particular year</title>
 </head>
 <body>
-<h1>Here's a document</h1>
+<h1>Select a document to view</h1>
 <hr/>
 <ul>
 <?php
     require_once("config.php");
-    $uri = htmlspecialchars($_GET["uri"]);
-    $contents = REST_PATH . "/db/queries/letterText.xql?uri=$uri";
+    $year = htmlspecialchars($_GET["year"]);
+    $contents = REST_PATH . "/db/queries/letterList.xql?year=$year";
     $result = file_get_contents($contents);
     echo $result;
 ?>
