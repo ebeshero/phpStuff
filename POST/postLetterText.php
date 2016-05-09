@@ -14,9 +14,13 @@
 // but evidently failing to retrieve the "uri" parameter, because I generate PART of the transformed XSLT file but the letter
 // is missing! The XSLT is evidently firing to produce the basic template of the page but fails to retrieve and transform the XML file.
 // If I change this to $_GET, I do successfully retrieve the XML file, and its URL appears in the browser.
+/*
+    This has the same problem as postLetterList.php; you should omit the GET query string from the URL when you use POST
     $contents = REST_PATH . "/db/queries/letterText.xql?uri=$uri";
-$data = array('type' => 'input', 'target' => $uri);
-$options = array(
+*/
+    $contents = REST_PATH . "/db/queries/letterText.xql";
+    $data = array('type' => 'input', 'target' => $uri);
+    $options = array(
     'http' => array(
         'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
         'method'  => 'POST',

@@ -12,9 +12,14 @@
     require_once("config.php");
     $year = htmlspecialchars($_GET["year"]);
 //ebb: when I change this to $_POST, I generate an HTML page with the h1 element, but no PHP generated output.
+//djb: it should be $_GET because it's being called from getYears.html with a GET URL
+/*
+    This includes a GET string, which you don't want if you're making a POST call
     $url = REST_PATH . "/db/queries/postLetterList.xql?year=$year";
-$data = array('type' => 'input', 'target' => $year);
-$options = array(
+*/
+    $url = REST_PATH . "/db/queries/postLetterList.xql";
+    $data = array('type' => 'input', 'target' => $year);
+    $options = array(
     'http' => array(
         'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
         'method'  => 'POST',
