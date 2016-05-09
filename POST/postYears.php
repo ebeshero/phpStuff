@@ -2,17 +2,19 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Document View</title>
+    <title>View the years</title>
 </head>
 <body>
-<h1>Document View</h1>
+<h1>Years</h1>
 <hr/>
+<p>Select a year to view of list of letters from that year</p>
+<ul>
 <?php
     require_once("config.php");
-    $uri = htmlspecialchars($_GET["uri"]);
-    $contents = REST_PATH . "/db/queries/letterText.xql?uri=$uri";
+    $contents = REST_PATH . "/db/queries/postLetterDates.xql";
     $result = file_get_contents($contents);
     echo $result;
 ?>
+</ul>
 </body>
 </html>
