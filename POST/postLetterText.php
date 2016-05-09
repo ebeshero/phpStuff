@@ -10,6 +10,10 @@
 <?php
     require_once("config.php");
     $uri = htmlspecialchars($_POST["uri"]);
+//ebb: with this, I generate an HTML page with the h1 element, and evidently part of my XQuery script is firing,
+// but evidently failing to retrieve the "uri" parameter, because I generate PART of the transformed XSLT file but the letter
+// is missing! The XSLT is evidently firing to produce the basic template of the page but fails to retrieve and transform the XML file.
+// If I change this to $_GET, I do successfully retrieve the XML file, and its URL appears in the browser.
     $contents = REST_PATH . "/db/queries/letterText.xql?uri=$uri";
 $data = array('type' => 'input', 'target' => $uri);
 $options = array(
