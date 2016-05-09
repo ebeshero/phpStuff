@@ -10,7 +10,7 @@
 <ul>
 <?php
     require_once("config.php");
-    $year = htmlspecialchars($_POST["year"]);
+    $year = htmlspecialchars($_POST);
 //ebb: when I change this to $_POST, I generate an HTML page with the h1 element, but no PHP generated output.
 //djb: it should be $_GET because it's being called from getYears.html with a GET URL
 /*
