@@ -7,10 +7,12 @@
 <body>
 <h1>Choose a document to read from the list below</h1>
 <hr/>
-<ul>
+<form action='postLetterText.php' method="post">
+<select title="letterList" id='letterList' name='letterList'>
 <?php
     require_once("config.php");
-    $year = htmlspecialchars($_POST);
+    $year = htmlspecialchars($_POST['year']);
+
 //ebb: when I change this to $_POST, I generate an HTML page with the h1 element, but no PHP generated output.
 //djb: it should be $_GET because it's being called from getYears.html with a GET URL
 /*
@@ -18,7 +20,7 @@
     $url = REST_PATH . "/db/queries/postLetterList.xql?year=$year";
 */
     $url = REST_PATH . "/db/queries/postLetterList.xql";
-    $data = array('type' => 'input', 'target' => $year);
+    $data = array('type' => 'input', 'year' => $year);
     $options = array(
     'http' => array(
         'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
@@ -30,6 +32,9 @@
     $result = file_get_contents($url, false, $context);
     echo $result;
 ?>
-</ul>
+</select>
+
+    <input name="uri" type="text"/>
+</form>
 </body>
 </html>

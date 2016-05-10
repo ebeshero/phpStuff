@@ -8,13 +8,17 @@
 <h1>Years</h1>
 <hr/>
 <p>Select a year to view of list of letters from that year</p>
-<ul>
+<form action='postLetterList.php' method="post">
+    <select id="dates" name="dates">
 <?php
     require_once("config.php");
     $contents = REST_PATH . "/db/queries/postLetterDates.xql";
     $result = file_get_contents($contents);
     echo $result;
 ?>
-</ul>
+    </select>
+
+    <input name="year" type="text"/>
+</form>
 </body>
 </html>
