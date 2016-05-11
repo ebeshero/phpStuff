@@ -8,7 +8,7 @@
 <h1>Choose a document to read from the list below</h1>
 <hr/>
 <form action='postLetterText.php' method="post">
-<select title="letterList" id='letterList' name='letterList'>
+<select id='uri' name='uri'>
 <?php
     require_once("config.php");
     $year = htmlspecialchars($_POST['year']);
@@ -34,7 +34,7 @@
 ?>
 </select>
 
-    <input name="uri" type="text"/>
+    <input type="submit" value="Submit Letter Selection" id="submit"/>
 </form>
 </body>
 </html>

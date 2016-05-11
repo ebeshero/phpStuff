@@ -9,7 +9,7 @@
 <hr/>
 <p>Select a year to view of list of letters from that year</p>
 <form action='postLetterList.php' method="post">
-    <select id="dates" name="dates">
+    <select id="year" name="year" title="year">
 <?php
     require_once("config.php");
     $contents = REST_PATH . "/db/queries/postLetterDates.xql";
@@ -18,7 +18,7 @@
 ?>
     </select>
 
-    <input name="year" type="text"/>
+    <input type="submit" value="Submit Year" id="submit"/>
 </form>
 </body>
 </html>
